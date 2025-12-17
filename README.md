@@ -10,4 +10,6 @@ This repository contains applications that I have built and that fulfills the fo
 - [Bouncing Balls (Improved)](./improve-bouncing-balls/)
 - [JavaScript Calculator](./javascript-calculator/)
 - [Markdown Previewer](./markdown-previewer/)
+- [My Pomodoro](./my-pomodoro/)
+- [Random Quotes](./random-quotes/)
 - [Roman Converter](./roman-converter/)
