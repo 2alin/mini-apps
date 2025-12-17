@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Apps</title>
+    <style>
+      :root {
+        --main-bg-color: #282828;
+        --main-text-color: #efefef;
+        --default-color: gray;
+        --primary-color: blue;
+        --primary-hover-color: ;
+        --secondary-color: #19bc8b;
+        --secondary-hover-color: #00ad9e;
+      }
+      body {
+        margin: 0;
+        color: var(--main-text-color);
+        background-color: var(--main-bg-color);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      a,
+      a:visited {
+        color: inherit;
+        text-decoration: underline dotted;
+      }
+      h1 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 .author {
+        font-family: monospace;
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+      .apps {
+        max-width: 400px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        border-right: 1px solid var(--secondary-color);
+        border-left: 1px solid var(--secondary-color);
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        list-style-type: '>  ';
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span>Mini Apps</span>
+      <span class="author"
+        >by
+        <a href="https://adilson.mx" target="_blank">Adilson Sandoval</a></span
+      >
+    </h1>
+    <section class="apps">
+      <ul class="app-list">
+        <li><a href="./markdown-previewer/">Markdown Previewer</a></li>
+      </ul>
+    </section>
+  </body>
+</html>
