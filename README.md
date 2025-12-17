@@ -14,3 +14,4 @@ This repository contains applications that I have built and that fulfills the fo
 - [Random Quotes](./random-quotes/)
 - [Roman Converter](./roman-converter/)
 - [Temperature Converter](./temperature-converter/)
+- [Weird Shapes](./weird-shapes/)
