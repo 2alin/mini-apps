@@ -19,6 +19,9 @@ var API_HEADERS = {
   Accept: "application/json"
 };
 
+// Fallback data when quotes server is not available
+var LOCAL_QUOTES_PATH = "./data/local-quotes.json";
+
 var COLORS = ["#843b62", "#5c7893", "#c85108", "#a20e0e", "#f05d23", "#612147", "#0c907d", "#5c848e", "#929aab", "#616f39", "#ed6363  ", "#00541a", "#5c3c10", "#d56073", "#326765"];
 
 function randomColorIndex(currentIndex) {
@@ -34,7 +37,7 @@ function TweetButton(props) {
     { type: "button", onClick: props.onClick, id: "tweet-quote" },
     React.createElement(
       "span",
-      { className: "fa-brands fa-twitter" },
+      { className: "fa fa-share" },
       " "
     )
   );
@@ -104,9 +107,17 @@ var App = function (_React$Component) {
 
       console.log("I'm updating");
       this.setState({ fetched: false });
-      fetch(API_LINK, { headers: API_HEADERS }).then(function (response) {
+
+      fetch(API_LINK, { headers: API_HEADERS })
+      .then(function (response) {
         return response.json();
-      }).then(function (data) {
+      })
+      .catch(function (err) {
+        console.error("Error while trying to fetch quotes from server: ", err)
+        console.log("Serving local quotes data");
+        return fetch(LOCAL_QUOTES_PATH).then(res => res.json()).then(json => [json[Math.floor(Math.random() * json.length)]])
+      })
+      .then(function (data) {
         _this2.setState({
           fetched: true,
           display: true,
